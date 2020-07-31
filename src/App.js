@@ -2,7 +2,7 @@ import React from 'react';
 import Cart from './Cart';
 import Navbar from './Navbar';
 import * as firebase from 'firebase';
-// import './App.css';
+import './App.css';
 
 class App extends React.Component {
   constructor(){
@@ -139,7 +139,7 @@ getCartTotal=()=>{
 addProducts=()=>{
   this.db.collection('products')
   .add({
-    img:'',
+    img:'https://images-na.ssl-images-amazon.com/images/I/81VUPiJU26L._SL1500_.jpg',
     qty:3,
     title:'Washing Machine',
     price:99999
@@ -158,7 +158,7 @@ addProducts=()=>{
       <div className="App">
         <Navbar count={this.getCartCount()}/>
 
-        <button onClick={this.addProducts}>Add a product</button>
+        <button className="add__btn" onClick={this.addProducts}>Add a product</button>
         <Cart 
         products={products}
         onIncreaseQuan={this.handleIncreaseQuantity}
